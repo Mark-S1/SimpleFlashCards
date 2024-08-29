@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<title>Simple Flash Cards</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="module" src="sfc.js"></script>
@@ -16,16 +16,16 @@
 		<div id="prev" class="button">Prev</div>
 		<div id="next" class="button" style="float:right;">Next</div>
 	</div>
-	<div style="margin-top: 5px;">
-		<input id="front-input" type="text" placeholder="front">
+	<div style="margin-top: 5px; width: 300px;">
+		<input id="front-input" type="text" placeholder="Front">
 		<br>
-		<input id="back-input" type="text" placeholder="back">
+		<input id="back-input" type="text" placeholder="Back">
 		<br>
-		<div id="add" class="button">Add</div>
+		<div id="add" class="button" style="width: 100%;">Add</div>
 	</div>
-	<div style="margin-top: 5px;">
+	<div style="margin-top: 20px; width: 300px;">
 		<input id="del-confirm" type="text" placeholder="Type 'Yes please'">
-		<div id="del" class="button">Delete storage</div>
+		<div id="del" class="button" style="width: 100%;">Delete storage</div>
 	</div>
 </body>
 </html>

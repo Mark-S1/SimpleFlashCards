@@ -10,6 +10,7 @@
 	border-radius: 30px;
 	padding: 20px;
 	margin-bottom: 5px;
+	font-size: 24px;
 }
 
 .button {
@@ -22,11 +23,13 @@
 
 #card-content {
 	font-weight: bold;
-	line-height: 190px;
+	line-height: 175px;
 	text-align: center;
 }
 
 input {
 	height: 27px;
 	margin-bottom: 5px;
+	font-size: 18px;
+	width: 100%;
 }
