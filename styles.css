@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#card {
+	width: 300px;
+	height: 300px;
+	border: 1px solid grey;
+	border-radius: 30px;
+	padding: 20px;
+	margin-bottom: 5px;
+}
+
+.button {
+	user-select: none;
+	background-color: lightgray;
+	border-radius: 4px;
+	display: inline-block;
+	padding: 5px;
+}
+
+#card-content {
+	font-weight: bold;
+	line-height: 190px;
+	text-align: center;
+}
+
+input {
+	height: 27px;
+	margin-bottom: 5px;
+}

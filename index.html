@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Simple Flash Cards</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="module" src="sfc.js"></script>
+</head>
+<body>
+	<div id="card">
+		<div id="card-index" style="margin-bottom: 10px;">1</div>
+		<div id="card-content">word</div>
+	</div>
+	<div style="width: 300px;">
+		<div id="prev" class="button">Prev</div>
+		<div id="next" class="button" style="float:right;">Next</div>
+	</div>
+	<div style="margin-top: 5px;">
+		<input id="front-input" type="text" placeholder="front">
+		<br>
+		<input id="back-input" type="text" placeholder="back">
+		<br>
+		<div id="add" class="button">Add</div>
+	</div>
+	<div style="margin-top: 5px;">
+		<input id="del-confirm" type="text" placeholder="Type 'Yes please'">
+		<div id="del" class="button">Delete storage</div>
+	</div>
+</body>
+</html>
