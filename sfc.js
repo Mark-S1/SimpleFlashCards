@@ -87,8 +87,16 @@ add.addEventListener("click", () => {
 del.addEventListener("click", () => {
 	const confirm = document.getElementById("del-confirm");
 	
-	if(confirm.value == "Yes please") {
+	if(confirm.value.trim() == "Yes please") {
 		localStorage.removeItem("cards");
+	} else if(confirm.value.startsWith("ID ")) {
+		let idValue = confirm.value.split(" ")[1];
+		
+		if(!!cards[idValue]) {
+			cards.splice(idValue, 1);
+			
+			localStorage.setItem("cards", JSON.stringify(cards));
+		}
 	}
 });
 
