@@ -1,6 +1,7 @@
 * {
 	box-sizing: border-box;
 	font-family: Arial, Helvetica, sans-serif;
+	user-select: none;
 }
 
 #flashcard-app {
@@ -20,7 +21,6 @@
 }
 
 .button {
-	user-select: none;
 	background-color: lightgray;
 	border-radius: 4px;
 	display: inline-block;
