@@ -62,8 +62,8 @@ add.addEventListener("click", () => {
 	if(!frontInput || !backInput) return;
 	
 	const newCard = {
-		front: frontInput.value,
-		back: backInput.value
+		front: frontInput.value.trim(),
+		back: backInput.value.trim()
 	};
 	
 	if(usingDefault) {
