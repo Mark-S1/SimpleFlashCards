@@ -11,7 +11,6 @@ let currentIndex = 0;
 let frontFirst = true;
 let isFront = true;
 
-
 if(!localStorage.getItem("cards")) {
 	initDefaultCards();
 } else {
@@ -42,6 +41,11 @@ next.addEventListener("click", () => {
 	currentIndex++;
 	if(currentIndex >= cards.length) currentIndex = 0;
 	
+	setCard(currentIndex);
+});
+
+flip.addEventListener("click", () => {
+	frontFirst = !frontFirst;
 	setCard(currentIndex);
 });
 
@@ -110,8 +114,14 @@ function setCard(index) {
 	
 	currentIndex = index;
 	cardIndex.innerText = currentIndex;
-	cardContent.innerText = cards[currentIndex].front;
-	isFront = true;
+	
+	if(frontFirst) {
+		cardContent.innerText = cards[currentIndex].front;
+		isFront = true;
+	} else {
+		cardContent.innerText = cards[currentIndex].back;
+		isFront = false;
+	}
 }
 
 function initDefaultCards() {
