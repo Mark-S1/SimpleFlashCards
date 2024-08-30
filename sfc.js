@@ -6,32 +6,17 @@ const del = document.getElementById("del");
 
 let cards = [];
 let usingDefault = false;
-
-if(!localStorage.getItem("cards")) {
-	usingDefault = true;
-	cards = [
-		{
-			front: "front0",
-			back: "back0"
-		},
-		{
-			front: "front1",
-			back: "back1"
-		},
-		{
-			front: "front2",
-			back: "back2"
-		}
-	];
-} else {
-	cards = JSON.parse(localStorage.getItem("cards"));
-}
-
 let currentIndex = 0;
 let frontFirst = true;
 let isFront = true;
 
-setCard(currentIndex);
+
+if(!localStorage.getItem("cards")) {
+	initDefaultCards();
+} else {
+	cards = JSON.parse(localStorage.getItem("cards"));
+	setCard(currentIndex);
+}
 
 cardEl.addEventListener("click", () => {
 	const cardContent = document.getElementById("card-content");
@@ -73,6 +58,7 @@ add.addEventListener("click", () => {
 	if(usingDefault) {
 		cards = [newCard];
 		usingDefault = false;
+		setCard(0);
 		
 	} else {
 		cards.push(newCard);
@@ -89,6 +75,7 @@ del.addEventListener("click", () => {
 	
 	if(confirm.value.trim() == "Yes please") {
 		localStorage.removeItem("cards");
+		
 	} else if(confirm.value.startsWith("ID ")) {
 		let idValue = confirm.value.split(" ")[1];
 		
@@ -97,7 +84,13 @@ del.addEventListener("click", () => {
 			
 			localStorage.setItem("cards", JSON.stringify(cards));
 		}
+		
+	} else {
+		return;
 	}
+	
+	confirm.value = "";
+	initDefaultCards();
 });
 
 function setCard(index) {
@@ -110,3 +103,23 @@ function setCard(index) {
 	isFront = true;
 }
 
+function initDefaultCards() {
+	usingDefault = true;
+	
+	cards = [
+		{
+			front: "front0",
+			back: "back0"
+		},
+		{
+			front: "front1",
+			back: "back1"
+		},
+		{
+			front: "front2",
+			back: "back2"
+		}
+	];
+	
+	setCard(0);
+}
