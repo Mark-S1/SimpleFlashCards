@@ -1,6 +1,7 @@
 const cardEl = document.getElementById("card");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
+const wiki = document.getElementById("wiki");
 const add = document.getElementById("add");
 const del = document.getElementById("del");
 
@@ -44,6 +45,16 @@ next.addEventListener("click", () => {
 	setCard(currentIndex);
 });
 
+wiki.addEventListener("click", () => {
+	let currentWord = document.getElementById("card-content").innerText;
+	
+	currentWord = currentWord.normalize("NFD").replace(/[\u0300-\u036f]/g, "");	//remove diacritics
+	
+	let url = "https://en.wiktionary.org/wiki/" + currentWord;
+	
+	window.open(url, "_blank").focus();
+});
+
 add.addEventListener("click", () => {
 	const frontInput = document.getElementById("front-input");
 	const backInput = document.getElementById("back-input");
@@ -75,6 +86,7 @@ del.addEventListener("click", () => {
 	
 	if(confirm.value.trim() == "Yes please") {
 		localStorage.removeItem("cards");
+		initDefaultCards();
 		
 	} else if(confirm.value.startsWith("ID ")) {
 		let idValue = confirm.value.split(" ")[1];
@@ -85,12 +97,11 @@ del.addEventListener("click", () => {
 			localStorage.setItem("cards", JSON.stringify(cards));
 		}
 		
-	} else {
-		return;
+		if(cards.length == 0) initDefaultCards();
+		else setCard(0);
 	}
 	
 	confirm.value = "";
-	initDefaultCards();
 });
 
 function setCard(index) {
