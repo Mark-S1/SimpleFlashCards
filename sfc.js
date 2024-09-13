@@ -63,11 +63,14 @@ add.addEventListener("click", () => {
 	const frontInput = document.getElementById("front-input");
 	const backInput = document.getElementById("back-input");
 	
-	if(!frontInput || !backInput) return;
+	const frontValue = frontInput.value.trim();
+	const backValue = backInput.value.trim();
+	
+	if(!frontValue || !backValue) return;
 	
 	const newCard = {
-		front: frontInput.value.trim(),
-		back: backInput.value.trim()
+		front: frontValue,
+		back: backValue
 	};
 	
 	if(usingDefault) {
