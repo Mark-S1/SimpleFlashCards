@@ -35,6 +35,10 @@
 	text-align: center;
 }
 
+.button:active {
+	background-color: rgb(225,225,225);
+}
+
 #card-content {
 	font-weight: bold;
 	text-align: center;
@@ -48,5 +52,33 @@ input {
 	height: 27px;
 	margin-bottom: 5px;
 	font-size: 18px;
+	width: 100%;
+}
+
+.float-right {
+	float: right;
+}
+
+.mb-10 {
+	margin-bottom: 10px;
+}
+
+.mr-4 {
+	margin-right: 4px;
+}
+
+.mt-5 {
+	margin-top: 5px;
+}
+
+.mt-20 {
+	margin-top: 20px;
+}
+
+.w-300 {
+	width: 300px;
+}
+
+.w-full {
 	width: 100%;
 }
